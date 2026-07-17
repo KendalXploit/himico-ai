@@ -1,0 +1,31 @@
+{
+  "name": "HIMICO AI — Flutter 3.34 Dev Environment",
+  "image": "ghcr.io/cirruslabs/flutter:3.34.0",
+
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "installMaven": false,
+      "installGradle": false
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Dart-Code.flutter",
+        "Dart-Code.dart-code"
+      ],
+      "settings": {
+        "dart.flutterSdkPath": "/sdks/flutter",
+        "editor.formatOnSave": true
+      }
+    }
+  },
+
+  "postCreateCommand": "cp -n .env.example .env || true && flutter pub get && flutter doctor -v",
+
+  "forwardPorts": [],
+
+  "remoteUser": "root"
+}
